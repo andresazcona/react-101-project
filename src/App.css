@@ -8,7 +8,7 @@
 body {
   background-image: url("../src/assets/city_background.png");
   background-color: #31bce3;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
