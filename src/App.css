@@ -396,3 +396,24 @@ button:hover {
   background-color: #ffc107;
   transform: translateY(-5px);
 }
+
+.search {
+  display: flex;
+  align-items: center;
+}
+
+.searchBox,
+.searchBy {
+  padding: 10px 16px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+}
+
+.searchBox {
+  flex: 2; /* Cambia el valor de flex para que la barra de búsqueda ocupe más espacio */
+  margin-right: 10px; /* Reducir el margen entre la barra de búsqueda y el cuadro de búsqueda */
+}
+
+.searchBy {
+  width: 200px; /* Ajusta el ancho del cuadro de selección según sea necesario */
+}

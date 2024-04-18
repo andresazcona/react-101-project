@@ -23,7 +23,8 @@ class App extends Component {
   state = {
     showWelcomePage: true,
     apiData: null,
-    searchQuery: ""
+    searchQuery: "",
+    searchBy: "name"
   };
 
   async componentDidMount() {
@@ -52,11 +53,12 @@ class App extends Component {
   };
 
   handleInputChange = (e) => {
-    this.setState({ searchQuery: e.target.value });
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
   };
 
   render() {
-    const { apiData, searchQuery, showWelcomePage } = this.state;
+    const { apiData, searchQuery, searchBy, showWelcomePage } = this.state;
 
     if (showWelcomePage) {
       return <WelcomePage onStart={this.handleStart} />;
@@ -80,9 +82,15 @@ class App extends Component {
     let filtered = apiData;
 
     if (searchQuery) {
-      filtered = apiData.filter((character) =>
-        character.character.toLowerCase().includes(searchQuery.toLowerCase())
-      );
+      if (searchBy === "name") {
+        filtered = apiData.filter((character) =>
+          character.character.toLowerCase().includes(searchQuery.toLowerCase())
+        );
+      } else if (searchBy === "quote") {
+        filtered = apiData.filter((character) =>
+          character.quote.toLowerCase().includes(searchQuery.toLowerCase())
+        );
+      }
     }
 
     return (
@@ -93,14 +101,26 @@ class App extends Component {
               className="searchBox"
               onChange={this.handleInputChange}
               value={searchQuery}
+              name="searchQuery"
               type="text"
-              placeholder="Search for a character"
+              placeholder="Search"
             />
+            <select
+              className="searchBy"
+              onChange={this.handleInputChange}
+              value={searchBy}
+              name="searchBy"
+            >
+              <option value="name">Search by Name</option>
+              <option value="quote">Search by Quote</option>
+            </select>
           </div>
         </div>
         <div className="characters">
           {filtered.map((character) => (
-            <Character key={character.id} character={character} />
+            <div key={character.id}>
+              <Character key={character.id} character={character} />
+            </div>
           ))}
         </div>
         <button className="returnButton" onClick={this.handleReturnHome}>

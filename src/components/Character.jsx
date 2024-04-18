@@ -3,12 +3,9 @@ import Name from "./Name";
 import Quote from "./Quote";
 import Image from "./Image";
 
-
 class Character extends Component {
   render() {
-    const { character, quote, image, characterDirection} =
-      this.props.character;
-
+    const { character, quote, image, characterDirection } = this.props.character;
 
     return (
       <div className="character">
@@ -16,12 +13,11 @@ class Character extends Component {
           <Name name={character} />
           <Quote quote={quote} />
           <Image
-            image={image}
+            imageUrl={image} // Pasar la URL de la imagen como imageUrl
             alt={character}
             characterDirection={characterDirection}
           />
         </div>
-
       </div>
     );
   }

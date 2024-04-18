@@ -1,6 +1,5 @@
 {
     "githubPullRequests.ignoredPullRequestBranches": [
-        "master",
         "master"
     ]
 }
