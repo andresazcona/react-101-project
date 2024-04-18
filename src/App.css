@@ -417,3 +417,69 @@ button:hover {
 .searchBy {
   width: 200px; /* Ajusta el ancho del cuadro de selección según sea necesario */
 }
+
+@media (max-width: 600px) {
+  .searchBox,
+  .searchBy {
+    padding: 8px 12px; /* Reducir el relleno para hacerlos más pequeños */
+    font-size: 14px; /* Reducir el tamaño de la fuente para hacerlos más pequeños */
+  }
+
+  .searchBy {
+    width: 150px; /* Reducir el ancho del cuadro de selección */
+  }
+
+  /* Estilos para el elemento searchArea en pantallas pequeñas */
+.searchArea {
+  height: 50px; /* Reducir la altura */
+  display: flex;
+  justify-content: center;
+}
+
+/* Estilos para el elemento input en pantallas pequeñas */
+input {
+  width: 80%; /* Reducir el ancho */
+  max-width: 300px; /* Establecer un ancho máximo */
+  border-radius: 10px; /* Reducir el radio del borde */
+  padding: 8px 12px; /* Reducir el relleno */
+}
+
+/* Estilos para el elemento returnButton en pantallas pequeñas */
+.returnButton {
+  padding: 8px 20px; /* Reducir el padding */
+  font-size: 1rem; /* Reducir el tamaño de la fuente */
+}
+
+/* Media query para pantallas de teléfonos móviles */
+
+
+/* Media query para tabletas */
+@media (max-width: 960px) {
+  .searchArea {
+    height: 50px; /* Ajustar la altura */
+  }
+
+  input {
+    width: 80%; /* Ajustar el ancho */
+    max-width: 300px; /* Establecer un ancho máximo */
+  }
+
+  .returnButton {
+    padding: 8px 20px; /* Ajustar el padding */
+    font-size: 1rem; /* Ajustar el tamaño de la fuente */
+  }
+
+  .simpLogo {
+    width: 70%; /* Reducir el tamaño de la imagen */
+  }
+
+  .simpVersion {
+    display: none; /* Ocultar la imagen */
+  }
+
+  .welcomePage img {
+    width: 70%; /* Ajustar el tamaño de la imagen */
+  }
+}
+
+}
